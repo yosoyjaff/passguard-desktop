@@ -1,0 +1,8 @@
+{
+  "name": "PassGuard+",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

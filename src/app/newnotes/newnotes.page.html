@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-buttons (click)="cerrarPage()" class="ion-margin" slot="start">
+      <ion-icon slot="icon-only" src="{{close}}"></ion-icon>
+    </ion-buttons>
+    <ion-title> {{ editing? 'Editar' : 'Nueva' }} Nota</ion-title>
+    <ion-buttons
+      (click)="editing? updateNote() : saveNote(); "
+      class="ion-margin"
+      slot="end"
+    >
+      <ion-icon slot="icon-only" src="{{success}}"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div class="box">
+    <form novalidate [formGroup]="formNote">
+      <ion-input
+        placeholder="Titulo"
+        formControlName="title"
+        type="text"
+      ></ion-input>
+      <ion-text color="danger">
+        <span
+          class="validation"
+          *ngIf="formNote.controls['title'].errors?.['required'] && (formNote.controls['title'].dirty || formNote.controls['title'].touched)"
+          >Campo requerido</span
+        >
+      </ion-text>
+      <ion-textarea
+        type="text"
+        formControlName="text"
+        placeholder="Nota"
+        rows="10"
+        cols="50"
+        maxlength="389"
+      ></ion-textarea>
+
+      <ion-text color="danger">
+        <span
+          class="validation"
+          *ngIf="formNote.controls['text'].errors?.['required'] && (formNote.controls['text'].dirty || formNote.controls['text'].touched)"
+          >Campo requerido
+        </span>
+      </ion-text>
+    </form>
+  </div>
+</ion-content>

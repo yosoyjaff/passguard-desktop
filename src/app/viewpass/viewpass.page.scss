@@ -1,0 +1,29 @@
+ion-title,
+h2 {
+  font-family: Lemon-Milk-Regular;
+  color: #010101;
+}
+
+h3 {
+  font-family: Lemon-Milk-Medium;
+  font-size: 12px;
+  color: #010101;
+}
+
+p {
+  font-family: LemonMilkUltraLight;
+  font-size: 12px;
+  color: #010101;
+}
+.box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item {
+  flex-grow: 4; /* default 0 */
+}
+
+.item2 {
+  flex-grow: 1; /* default 0 */
+}

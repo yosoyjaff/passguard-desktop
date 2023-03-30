@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-buttons class="ion-margin" (click)="cerrarPage()" slot="start">
+      <ion-icon slot="icon-only" src="{{close}}"></ion-icon>
+    </ion-buttons>
+    <ion-title>{{ editing? 'Editar' : 'Nueva' }} PassGuard</ion-title>
+    <ion-buttons
+      (click)="editing? updatePassguard() : savePassguard()"
+      class="ion-margin"
+      slot="end"
+    >
+      <ion-icon slot="icon-only" src="{{success}}"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div class="box">
+    <form novalidate [formGroup]="formPassguard">
+      <ion-input
+        placeholder="Pagina"
+        formControlName="page"
+        class="input"
+        type="name"
+      ></ion-input>
+      <ion-text color="danger">
+        <span
+          class="validation"
+          *ngIf="formPassguard.controls['page'].errors?.['required'] && (formPassguard.controls['page'].dirty || formPassguard.controls['page'].touched)"
+          >Campo requerido</span
+        >
+      </ion-text>
+      <ion-input
+        placeholder="Email"
+        formControlName="email"
+        class="input"
+        type="email"
+      ></ion-input>
+      <ion-text color="danger">
+        <span
+          class="validation"
+          *ngIf="formPassguard.controls['email'].errors?.['required'] && (formPassguard.controls['email'].dirty || formPassguard.controls['email'].touched)"
+          >Campo requerido</span
+        >
+      </ion-text>
+      <ion-input
+        formControlName="password"
+        placeholder="Contraseña"
+        class="input"
+        type="passwords"
+      ></ion-input>
+      <ion-text color="danger">
+        <span
+          class="validation"
+          *ngIf="formPassguard.controls['password'].errors?.['required'] && (formPassguard.controls['password'].dirty || formPassguard.controls['password'].touched)"
+          >Campo requerido</span
+        >
+      </ion-text>
+      <ion-input
+        formControlName="obs"
+        placeholder="Observaciones"
+        class="input"
+        type="text"
+      ></ion-input>
+    </form>
+  </div>
+</ion-content>

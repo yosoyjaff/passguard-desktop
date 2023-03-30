@@ -1,0 +1,59 @@
+<ion-content>
+  <div class="centering">
+    <div class="container">
+      <h1 class="title">NOTEPASS</h1>
+      <div class="svgimg">
+        <img src="../../assets/cloudsvg.svg" alt="img" />
+      </div>
+
+      <div class="inputs">
+        <form novalidate [formGroup]="formData" (ngSubmit)="onLogin()">
+          <div class="container-input">
+            <ion-item fill="outline">
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input
+                placeholder="ejemplo@ejemplo.com"
+                name="email"
+                formControlName="email"
+              >
+              </ion-input>
+            </ion-item>
+            <ion-item fill="outline">
+              <ion-label position="stacked">Contraseña</ion-label>
+              <ion-input
+                placeholder="Contraseña"
+                type="password"
+                name="password"
+                formControlName="password"
+              >
+              </ion-input>
+            </ion-item>
+            <ion-text color="danger">
+              <span
+                class="validation"
+                *ngIf="formData.controls['email'].invalid && (formData.controls['email'].dirty || formData.controls['email'].touched)"
+                >Email incorrecto</span
+              >
+
+              <span
+                class="validation"
+                *ngIf="formData.controls['email'].errors?.['required'] && (formData.controls['email'].dirty || formData.controls['email'].touched)"
+                >Email es requerido</span
+              >
+              <span
+                class="validation"
+                *ngIf="formData.controls['password'].errors?.['required'] && (formData.controls['password'].dirty || formData.controls['password'].touched)"
+                >Contraseña requerida</span
+              >
+            </ion-text>
+
+            <div class="buttonlogin">
+              <button type="submit" class="btn-grad">Ingresar</button>
+            </div>
+            <a class="forgot">Recuperar contraseña?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

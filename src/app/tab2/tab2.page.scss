@@ -1,0 +1,38 @@
+.bottom {
+  background: #010101;
+}
+
+ion-toolbar {
+  --background: #ffff;
+}
+
+ion-title,
+.title {
+  font-family: Lemon-Milk-Regular;
+  color: #010101;
+  margin-left: 10%;
+}
+
+.list {
+  --background: #fff5e7;
+  margin: 0;
+  padding-bottom: 5px;
+  border-radius: 2px;
+}
+
+.box {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+p {
+  font-family: LemonMilkUltraLight;
+  font-size: 12px;
+}
+
+ion-header {
+  background-color: #ffff;
+}
+ion-row{
+
+  padding-left: 7%;
+}
